@@ -1,0 +1,15 @@
+# Extracted artifacts (temp deploy files)
+DeployFiles/App/
+DeployFiles/Services/
+DeployFiles/Database/
+DeployFiles/Files/
+
+# Logs and backups (runtime output)
+Logs/
+Backup/
+
+# Windows crash dumps
+*.stackdump
+
+# PowerShell temp files
+*.tmp

@@ -1,0 +1,39 @@
+{
+  "ProjectName": "sample",
+  "ProjectFileDropPath": "D:\\Projects\\AutoDeploy\\DeployFiles",
+  "ConnectionStrings": {
+    "MssqlConnection": "@secret:MssqlConnection",
+    "Db2Connection": "DATABASE=MYDB;HOSTNAME=db2host;PORT=50000;PROTOCOL=TCPIP;UID=myuser;PWD=mypass;"
+  },
+  "AzureKeyVault": {
+    "Url": "https://my-keyvault.vault.azure.net",
+    "ClientId": "00000000-0000-0000-0000-000000000000",
+    "ClientSecret": "@secret:KvClientSecret",
+    "TenantId": "00000000-0000-0000-0000-000000000000"
+  },
+  "AppConfiguration": [
+    {
+      "SiteName": "MySite",
+      "SitePath": "C:\\inetpub\\wwwroot\\mysite",
+      "AppPoolName": "MySitePool",
+      "ArtifactFolderName": "publish",
+      "HealthCheckUrl": "http://localhost/health",
+      "HealthCheckType": "GET",
+      "IgnoreFiles": ["appsettings*.json", "web.config"],
+      "IgnoreDirs": ["logs", "assets"],
+      "Purge": false,
+      "DeltaConfig": "MySite__appsettings.delta.json"
+    }
+  ],
+  "ServiceConfiguration": [
+    {
+      "ServiceName": "MyWindowsService",
+      "ServicePath": "C:\\Services\\MyWindowsService",
+      "ArtifactFolderName": "publish",
+      "IgnoreFiles": ["appsettings*.json"],
+      "IgnoreDirs": ["logs"],
+      "Purge": false,
+      "DeltaConfig": "MyWindowsService__appsettings.delta.json"
+    }
+  ]
+}
